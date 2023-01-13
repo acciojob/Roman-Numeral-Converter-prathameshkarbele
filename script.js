@@ -11,6 +11,16 @@ function convertToRoman(num) {
 
   //your code here
 
+  let result = "";
+  let numbers = Object.keys(obj).map(Number).sort((a, b) => b - a);
+  for (let i = 0; i < numbers.length; i++) {
+    while (num >= numbers[i]) {
+      result += obj[numbers[i]];
+      num -= numbers[i];
+    }
+  }
+  return result;
+
 }
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
 
